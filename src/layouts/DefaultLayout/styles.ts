@@ -11,4 +11,13 @@ export const LayoutContainer = styled.div`
 
   display: flex;
   flex-direction: column;
+
+  @media (max-width: 1024px) {
+    margin: 4rem 2rem;
+  }
+
+  @media (max-width: 375px) {
+    margin: 0 0;
+    height: 100vh;
+  }
 `

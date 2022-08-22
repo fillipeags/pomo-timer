@@ -1,6 +1,9 @@
 import { ActionTypes } from './actions'
 import { current, produce } from 'immer'
 
+import ClockAudio from './../../assets/timeout-clock.mp3'
+import { audioPlayer } from '../../helpers/audioPlayer'
+
 export interface Cycle {
   id: string
   task: string
@@ -48,6 +51,7 @@ export function cyclesReducer(state: CyclesState, action: any) {
       return produce(state, (draft) => {
         draft.activeCycleId = null
         draft.cycles[currentCycleIndex].finishedDate = new Date()
+        audioPlayer(ClockAudio, 6)
       })
     }
     default:
